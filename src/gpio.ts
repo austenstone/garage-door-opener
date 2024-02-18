@@ -1,15 +1,17 @@
 import rpio from 'rpio';
 
-rpio.open(12, rpio.INPUT);
+const GARAGE_DOOR_OUT = 12;
+
+rpio.open(GARAGE_DOOR_OUT, rpio.INPUT);
 
 const openGarageDoor = () => {
-    rpio.write(12, rpio.HIGH);
-    setTimeout(() => rpio.write(12, rpio.LOW), 500);
+    rpio.write(GARAGE_DOOR_OUT, rpio.HIGH);
+    setTimeout(() => rpio.write(GARAGE_DOOR_OUT, rpio.LOW), 500);
 };
 
 const closeGarageDoor = () => {
-    rpio.write(12, rpio.HIGH);
-    setTimeout(() => rpio.write(12, rpio.LOW), 500);
+    rpio.write(GARAGE_DOOR_OUT, rpio.HIGH);
+    setTimeout(() => rpio.write(GARAGE_DOOR_OUT, rpio.LOW), 500);
 }
 
 export { openGarageDoor, closeGarageDoor };
