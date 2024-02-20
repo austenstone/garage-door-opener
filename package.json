@@ -10,7 +10,7 @@
     "lint": "eslint src/**/*.ts",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn src/index.ts",
-    "service:install": "cp garage-door.service /etc/systemd/system/",
+    "service:install": "chmod +x garage-door.service; chmod 664 garage-door.service; cp garage-door.service /etc/systemd/system/",
     "service:enable": "systemctl enable garage-door.service",
     "service:start": "systemctl start garage-door.service"
   },
