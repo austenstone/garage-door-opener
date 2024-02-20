@@ -1,6 +1,6 @@
 import rpio from 'rpio';
 
-const GARAGE_DOOR_OUT = 12;
+const GARAGE_DOOR_OUT = 0;
 
 rpio.open(GARAGE_DOOR_OUT, rpio.OUTPUT);
 
@@ -22,5 +22,5 @@ function pollcb(pin)
         if (rpio.read(pin)) return;
         console.log('Button pressed on pin P%d', pin);
 }
-
-rpio.poll(13, pollcb, rpio.POLL_LOW);
+rpio.mode(2, rpio.INPUT);
+rpio.poll(2, pollcb, rpio.POLL_LOW);
