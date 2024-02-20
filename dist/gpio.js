@@ -17,8 +17,10 @@ const closeGarageDoor = () => {
     setTimeout(() => rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.LOW), 500);
 };
 exports.closeGarageDoor = closeGarageDoor;
-rpio_1.default.open(13, rpio_1.default.INPUT);
-setInterval(() => {
-    const _13 = rpio_1.default.read(13);
-    console.log(`_13: ${_13}`);
-}, 100);
+function pollcb(pin) {
+    rpio_1.default.msleep(20);
+    if (rpio_1.default.read(pin))
+        return;
+    console.log('Button pressed on pin P%d', pin);
+}
+rpio_1.default.poll(13, pollcb, rpio_1.default.POLL_LOW);
