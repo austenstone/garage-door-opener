@@ -16,11 +16,8 @@ const closeGarageDoor = () => {
 
 export { openGarageDoor, closeGarageDoor };
 
-rpio.open(15, rpio.INPUT);
-rpio.open(16, rpio.INPUT);
+rpio.open(13, rpio.INPUT);
 setInterval(() => {
-    const _15 = rpio.read(15)
-    const _16 = rpio.read(16)
-    const _12 = rpio.read(12)
-    console.log(`12: ${_12}, 15: ${_15}, 16: ${_16}`);
+    const _13 = rpio.read(13)
+    console.log(`_13: ${_13}`)
 }, 100);

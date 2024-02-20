@@ -17,11 +17,8 @@ const closeGarageDoor = () => {
     setTimeout(() => rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.LOW), 500);
 };
 exports.closeGarageDoor = closeGarageDoor;
-rpio_1.default.open(15, rpio_1.default.INPUT);
-rpio_1.default.open(16, rpio_1.default.INPUT);
+rpio_1.default.open(13, rpio_1.default.INPUT);
 setInterval(() => {
-    const _15 = rpio_1.default.read(15);
-    const _16 = rpio_1.default.read(16);
-    const _12 = rpio_1.default.read(12);
-    console.log(`12: ${_12}, 15: ${_15}, 16: ${_16}`);
+    const _13 = rpio_1.default.read(13);
+    console.log(`_13: ${_13}`);
 }, 100);
