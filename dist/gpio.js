@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.closeGarageDoor = exports.openGarageDoor = void 0;
 const rpio_1 = __importDefault(require("rpio"));
-const GARAGE_DOOR_OUT = 0;
+const GARAGE_DOOR_OUT = 11;
 rpio_1.default.open(GARAGE_DOOR_OUT, rpio_1.default.OUTPUT);
 const openGarageDoor = () => {
     rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.HIGH);
@@ -23,5 +23,5 @@ function pollcb(pin) {
         return;
     console.log('Button pressed on pin P%d', pin);
 }
-rpio_1.default.mode(2, rpio_1.default.INPUT);
-rpio_1.default.poll(2, pollcb, rpio_1.default.POLL_LOW);
+rpio_1.default.mode(13, rpio_1.default.INPUT);
+rpio_1.default.poll(13, pollcb, rpio_1.default.POLL_LOW);
