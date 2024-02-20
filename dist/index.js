@@ -15,12 +15,13 @@ app.use(express_winston_1.default.logger({
     transports: [
         new winston_1.default.transports.File({
             filename: 'express.log'
-        })
+        }),
+        new winston_1.default.transports.Console()
     ],
     format: winston_1.default.format.simple(),
     meta: true,
     expressFormat: true,
-    colorize: false
+    colorize: false,
 }));
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.listen(port, () => {
