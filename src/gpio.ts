@@ -21,5 +21,6 @@ rpio.open(16, rpio.INPUT);
 setInterval(() => {
     const _15 = rpio.read(15)
     const _16 = rpio.read(16)
-    console.log(`15: ${_15}, 16: ${_16}`);
+    const _12 = rpio.read(12)
+    console.log(`12: ${_12}, 15: ${_15}, 16: ${_16}`);
 }, 100);
