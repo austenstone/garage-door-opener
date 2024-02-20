@@ -1,29 +1,28 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.closeGarageDoor = exports.openGarageDoor = void 0;
+exports.openGarageDoor = void 0;
 const rpio_1 = __importDefault(require("rpio"));
 const GARAGE_DOOR_OUT = 11;
 rpio_1.default.open(GARAGE_DOOR_OUT, rpio_1.default.OUTPUT);
-const openGarageDoor = () => {
-    rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.HIGH);
-    setTimeout(() => rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.LOW), 500);
-};
+const openGarageDoor = () => __awaiter(void 0, void 0, void 0, function* () {
+    return new Promise((resolve) => {
+        rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.HIGH);
+        setTimeout(() => {
+            rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.LOW);
+            resolve(true);
+        }, 1000);
+    });
+});
 exports.openGarageDoor = openGarageDoor;
-const closeGarageDoor = () => {
-    rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.HIGH);
-    setTimeout(() => rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.LOW), 500);
-};
-exports.closeGarageDoor = closeGarageDoor;
-function pollcb(pin) {
-    rpio_1.default.msleep(20);
-    if (rpio_1.default.read(pin))
-        return;
-    console.log('Button pressed on pin P%d', pin);
-}
-rpio_1.default.mode(8, rpio_1.default.INPUT);
-rpio_1.default.mode(10, rpio_1.default.INPUT);
-rpio_1.default.poll(8, pollcb, rpio_1.default.POLL_LOW);
-rpio_1.default.poll(10, pollcb, rpio_1.default.POLL_LOW);

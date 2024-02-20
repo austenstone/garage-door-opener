@@ -1,3 +1,1 @@
-declare const openGarageDoor: () => void;
-declare const closeGarageDoor: () => void;
-export { openGarageDoor, closeGarageDoor };
+export declare const openGarageDoor: () => Promise<unknown>;
