@@ -23,5 +23,7 @@ function pollcb(pin) {
         return;
     console.log('Button pressed on pin P%d', pin);
 }
-rpio_1.default.mode(13, rpio_1.default.INPUT);
-rpio_1.default.poll(13, pollcb, rpio_1.default.POLL_LOW);
+rpio_1.default.mode(8, rpio_1.default.INPUT);
+rpio_1.default.mode(10, rpio_1.default.INPUT);
+rpio_1.default.poll(8, pollcb, rpio_1.default.POLL_LOW);
+rpio_1.default.poll(10, pollcb, rpio_1.default.POLL_LOW);

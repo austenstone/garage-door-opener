@@ -22,5 +22,7 @@ function pollcb(pin)
         if (rpio.read(pin)) return;
         console.log('Button pressed on pin P%d', pin);
 }
-rpio.mode(13, rpio.INPUT);
-rpio.poll(13, pollcb, rpio.POLL_LOW);
+rpio.mode(8, rpio.INPUT);
+rpio.mode(10, rpio.INPUT);
+rpio.poll(8, pollcb, rpio.POLL_LOW);
+rpio.poll(10, pollcb, rpio.POLL_LOW);
