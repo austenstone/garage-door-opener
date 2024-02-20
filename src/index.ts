@@ -12,12 +12,13 @@ app.use(expressWinston.logger({
   transports: [
     new winston.transports.File({
       filename: 'express.log'
-    })
+    }),
+    new winston.transports.Console()
   ],
   format: winston.format.simple(),
   meta: true,
   expressFormat: true,
-  colorize: false
+  colorize: false,
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
