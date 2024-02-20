@@ -5,7 +5,7 @@
   "main": "lib/markdown.js",
   "types": "lib/markdown.d.ts",
   "scripts": {
-    "build": "tsc; mkdir dist/public; cp src/public dist/public",
+    "build": "tsc",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
     "start": "node dist/index.js",
