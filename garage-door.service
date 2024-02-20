@@ -2,7 +2,7 @@
 Description=Garage Door
 
 [Service]
-ExecStart=/usr/local/bin/node /home/astone/source/garage-door-opener/dist/index.js
+ExecStart=/usr/bin/node /home/astone/source/garage-door-opener/dist/index.js
 Restart=always
 # User=nobody
 DynamicUser=yes
