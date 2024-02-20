@@ -12,7 +12,8 @@
     "dev": "ts-node-dev --respawn src/index.ts",
     "service:install": "chmod +x garage-door.service; chmod 664 garage-door.service; cp garage-door.service /etc/systemd/system/; systemctl daemon-reload",
     "service:enable": "systemctl enable garage-door.service",
-    "service:start": "systemctl start garage-door.service"
+    "service:start": "systemctl start garage-door.service",
+    "service:stop": "systemctl stop garage-door.service"
   },
   "keywords": [
     "node",
