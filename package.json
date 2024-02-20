@@ -10,7 +10,7 @@
     "lint": "eslint src/**/*.ts",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn src/index.ts",
-    "service:install": "sudo cp garage-door.service /etc/systemd/system/"
+    "service:install": "cp garage-door.service /etc/systemd/system/"
   },
   "keywords": [
     "node",
