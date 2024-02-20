@@ -2,7 +2,7 @@ import rpio from 'rpio';
 
 const GARAGE_DOOR_OUT = 12;
 
-rpio.open(GARAGE_DOOR_OUT, rpio.OUTPUT, rpio.LOW);
+rpio.open(GARAGE_DOOR_OUT, rpio.OUTPUT);
 
 const openGarageDoor = () => {
     rpio.write(GARAGE_DOOR_OUT, rpio.HIGH);

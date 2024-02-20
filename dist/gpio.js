@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.closeGarageDoor = exports.openGarageDoor = void 0;
 const rpio_1 = __importDefault(require("rpio"));
 const GARAGE_DOOR_OUT = 12;
-rpio_1.default.open(GARAGE_DOOR_OUT, rpio_1.default.OUTPUT, rpio_1.default.LOW);
+rpio_1.default.open(GARAGE_DOOR_OUT, rpio_1.default.OUTPUT);
 const openGarageDoor = () => {
     rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.HIGH);
     setTimeout(() => rpio_1.default.write(GARAGE_DOOR_OUT, rpio_1.default.LOW), 500);
