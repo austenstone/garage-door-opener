@@ -1,5 +1,5 @@
 {
-  "name": "markdown-interpolation",
+  "name": "garage-door-opener",
   "version": "1.5.0",
   "description": "Add an issue or pull request to a project",
   "main": "lib/markdown.js",
@@ -20,7 +20,7 @@
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/austenstone/markdown-interpolation.git"
+    "url": "https://github.com/austenstone/garage-door-opener.git"
   },
   "license": "MIT",
   "devDependencies": {
