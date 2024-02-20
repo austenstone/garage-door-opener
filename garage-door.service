@@ -2,7 +2,7 @@
 Description=Garage Door
 
 [Service]
-ExecStart=/home/astone/source/garage-door-opener/dist/index.js
+ExecStart=/usr/local/bin/node /home/astone/source/garage-door-opener/dist/index.js
 Restart=always
 User=nobody
 # Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
